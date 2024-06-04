@@ -1,0 +1,132 @@
+:root {
+    --background-image-light: url('https://img.freepik.com/premium-photo/background-with-white-triangles-geometrical-pattern-with-polygons_76964-218883.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1717286400&semt=ais_user');
+    --background-image-dark: url('https://i.pinimg.com/originals/90/72/80/907280526f902884ceae47fffefb8289.jpg');
+    --text-color: #fc0000;
+    --primary-color: #6a08a2;
+    --cell-background: #ffffff6d;
+    --cell-border: #060847;
+    --cell-hover: #f9f9f9;
+    --x-color: #a50707;
+    --o-color: #9f00e3;
+}
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: var(--background-image-light);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-image: var(--background-image-dark);
+    background-size: 100%;
+    --text-color: #d941bd;
+    --primary-color: #11e52d;
+    --cell-background: #444444b6;
+    --cell-border: #f0f0f0;
+    --cell-hover: #555;
+    --x-color: #76ef39;
+    --o-color: #d94f8d;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.left-container,
+.middle-container,
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-container {
+    margin-right: 80px;
+}
+
+.middle-container {
+    flex-grow: 1;
+    margin-right: 100px;
+}
+
+.right-container {
+    margin-left: 20px;
+}
+
+.mode-selection button {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 1em;
+    margin: 5px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: darken(var(--primary-color), 90%);
+    transform: translateY(-2px);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-background);
+    border: 2px solid var(--cell-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    background-color: var(--cell-hover);
+    transform: scale(1.05);
+}
+
+
+.score {
+    margin-bottom: 10px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px auto;
+}
+
+
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.x {
+    color: var(--x-color);
+    font-weight: bold;
+}
+
+.o {
+    color: var(--o-color);
+    font-weight: bold;
+}
